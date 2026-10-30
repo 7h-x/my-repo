@@ -1,549 +1,554 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>ha_als23 | استوديو التصميم</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171510">
+<title>GRAINA — Premium Granola</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
-    :root {
-      --bg: #090909;
-      --panel: #111110;
-      --gold: #d9b978;
-      --white: #f7f4ed;
-      --muted: #9b9993;
-      --border: rgba(255,255,255,.1);
-    }
+:root{
+ --bg:#171510;
+ --panel:#211e18;
+ --cream:#f1e6d4;
+ --gold:#c9a779;
+ --muted:#a69a88;
+ --line:#ffffff17;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--bg);color:var(--cream);
+ font-family:Cairo,sans-serif;overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+::selection{background:var(--gold);color:#171510}
 
-    * { box-sizing: border-box; }
+/* NAV */
+nav{
+ position:fixed;z-index:100;top:0;left:0;right:0;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:18px 7%;
+ background:#171510a8;backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--line);
+}
+.logo{
+ font-family:'Playfair Display',serif;
+ font-size:27px;letter-spacing:4px;color:var(--gold);
+}
+.navlinks{display:flex;gap:28px;align-items:center}
+.navlinks a{font-size:12px;color:#e6dccd;transition:.3s}
+.navlinks a:hover{color:var(--gold)}
+.nav-cta{
+ border:1px solid var(--gold);padding:9px 19px;border-radius:30px;
+}
 
-    html { scroll-behavior: smooth; }
+/* HERO */
+.hero{
+ min-height:100svh;position:relative;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:130px 20px 70px;
+ background:
+ radial-gradient(ellipse at 50% 40%,#66503955,transparent 40%),
+ radial-gradient(ellipse at 15% 80%,#a17a3c20,transparent 35%),
+ #171510;
+}
+.orb{
+ position:absolute;border-radius:50%;filter:blur(2px);
+ pointer-events:none;animation:float 9s ease-in-out infinite;
+}
+.orb.one{
+ width:300px;height:300px;top:20%;left:-120px;
+ background:#b28b4b12;
+}
+.orb.two{
+ width:400px;height:400px;bottom:-200px;right:-100px;
+ background:#c5a47712;animation-delay:2s;
+}
+.hero-content{position:relative;z-index:2}
+.eyebrow{
+ color:var(--gold);letter-spacing:5px;
+ font-size:11px;font-weight:700;
+}
+.hero h1{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(65px,13vw,145px);
+ line-height:.95;letter-spacing:-4px;
+ margin:30px 0 15px;
+ background:linear-gradient(120deg,#fff4df,#cba779,#fff0d4);
+ -webkit-background-clip:text;color:transparent;
+ animation:shine 5s linear infinite;
+ background-size:200%;
+}
+.hero .arabic{
+ font-size:25px;letter-spacing:9px;color:#e8d4b7;
+}
+.hero p{
+ max-width:500px;margin:25px auto;
+ color:#b8ad9e;line-height:2.1;font-size:14px;
+}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{
+ border:0;border-radius:50px;padding:14px 28px;
+ cursor:pointer;transition:.3s;font-weight:800;
+}
+.btn-gold{background:var(--gold);color:#171510}
+.btn-outline{background:transparent;border:1px solid #c9a77977;color:#f1e6d4}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 35px #c9a77925}
+.scroll-label{
+ margin-top:70px;color:#9b8e7a;font-size:10px;letter-spacing:4px;
+ animation:pulse 2s infinite;
+}
 
-    body {
-      margin: 0;
-      background:
-        radial-gradient(ellipse at 50% -20%, rgba(176,137,68,.16), transparent 48%),
-        var(--bg);
-      color: var(--white);
-      font-family: "Alexandria", Tahoma, sans-serif;
-    }
+/* MARQUEE */
+.marquee{
+ overflow:hidden;background:var(--gold);color:#201a12;
+ padding:13px 0;white-space:nowrap;
+}
+.marquee-track{
+ display:flex;width:max-content;
+ animation:marquee 25s linear infinite;
+}
+.marquee span{
+ font-family:'Playfair Display',serif;
+ font-size:18px;font-weight:bold;letter-spacing:3px;
+ padding:0 30px;
+}
 
-    a { color: inherit; text-decoration: none; }
+/* SECTION */
+section{padding:110px 7%}
+.container{max-width:1150px;margin:auto}
+.section-top{
+ display:flex;justify-content:space-between;align-items:end;
+ gap:20px;margin-bottom:45px;
+}
+.tag{
+ color:var(--gold);font-size:10px;letter-spacing:4px;
+ font-weight:800;
+}
+.section-top h2{
+ font-size:clamp(30px,5vw,55px);margin:8px 0;
+}
+.section-top p{color:var(--muted);font-size:13px}
 
-    .wrap {
-      width: min(1160px, 90%);
-      margin: auto;
-    }
+/* PRODUCTS */
+.products{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;
+}
+.product{
+ position:relative;overflow:hidden;
+ background:linear-gradient(145deg,#29241c,#1d1b16);
+ border:1px solid var(--line);border-radius:20px;
+ padding:25px;transition:.5s;
+}
+.product:hover{
+ transform:translateY(-10px);
+ border-color:#c9a77988;
+ box-shadow:0 25px 65px #0007;
+}
+.product-visual{
+ height:270px;position:relative;
+ border-radius:14px;overflow:hidden;
+ display:grid;place-items:center;
+ background:
+ radial-gradient(circle at 50% 40%,#c6a47655,transparent 42%),
+ linear-gradient(140deg,#3b3124,#242018);
+}
+.product-visual:before{
+ content:"";position:absolute;width:210px;height:210px;
+ border:1px solid #d8b98b44;border-radius:50%;
+ animation:rotate 30s linear infinite;
+}
+.product-visual:after{
+ content:"";position:absolute;width:160px;height:160px;
+ border:1px solid #d8b98b30;border-radius:50%;
+}
+.jar{
+ width:105px;height:145px;z-index:2;position:relative;
+ border-radius:18px 18px 24px 24px;
+ border:2px solid #d4b78c;
+ background:linear-gradient(90deg,#b08b5733,#e3c99a88,#99724333);
+ box-shadow:inset 0 0 25px #fff2,0 20px 45px #0007;
+ display:flex;align-items:center;justify-content:center;
+ transform:rotate(-5deg);
+ transition:.5s;
+}
+.product:hover .jar{transform:rotate(0) scale(1.09)}
+.jar:before{
+ content:"";position:absolute;top:-14px;left:-4px;
+ width:108px;height:17px;border-radius:5px;background:#171410;
+ border:1px solid #d2b98c;
+}
+.jar-label{
+ background:#e9dcc5;color:#473321;
+ text-align:center;padding:10px 5px;width:85%;
+ font-family:'Playfair Display',serif;
+ font-size:12px;font-weight:bold;letter-spacing:1px;
+}
+.jar-label small{display:block;font:9px Cairo}
+.product-info{padding-top:20px}
+.product-info h3{font-size:19px;margin:0}
+.product-info p{font-size:12px;color:var(--muted)}
+.product-bottom{
+ display:flex;justify-content:space-between;align-items:center;
+ margin-top:20px;
+}
+.price{color:var(--gold);font-size:23px;font-weight:900}
+.buy{
+ background:transparent;color:var(--gold);
+ border:1px solid #c9a77977;border-radius:30px;
+ padding:10px 18px;cursor:pointer;transition:.3s;
+}
+.buy:hover{background:var(--gold);color:#171510}
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      border-bottom: 1px solid var(--border);
-      background: rgba(9,9,9,.78);
-      backdrop-filter: blur(16px);
-    }
+/* BRAND STORY */
+.story{
+ background:#e9ddc9;color:#35291d;
+ position:relative;overflow:hidden;
+}
+.story-grid{
+ display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+}
+.story-title{
+ font-family:'Playfair Display',serif;
+ font-size:clamp(40px,7vw,75px);line-height:1.05;
+}
+.story-title span{color:#9b7446}
+.story-copy{font-size:14px;line-height:2.3;color:#75634e}
+.story-art{
+ min-height:330px;border:1px solid #a78b6655;
+ border-radius:200px 200px 20px 20px;
+ display:grid;place-items:center;
+ background:radial-gradient(circle,#c8ab7c,#e9ddc9 65%);
+ position:relative;
+}
+.story-art strong{
+ font-family:'Playfair Display',serif;
+ font-size:65px;color:#624a30;
+ letter-spacing:3px;
+}
 
-    nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+/* VALUES */
+.values{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+}
+.value{
+ border:1px solid var(--line);border-radius:16px;
+ padding:30px 20px;text-align:center;
+ background:#211e18;transition:.3s;
+}
+.value:hover{transform:translateY(-7px);border-color:var(--gold)}
+.value-icon{font-size:27px}
+.value h3{font-size:16px}
+.value p{font-size:12px;line-height:2;color:var(--muted)}
 
-    .brand {
-      color: var(--gold);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+/* ORDER */
+.order-area{
+ background:linear-gradient(145deg,#282218,#171510);
+ border:1px solid #c9a77944;border-radius:24px;
+ padding:40px;max-width:680px;margin:auto;
+ box-shadow:0 20px 70px #0004;
+}
+.order-area h2{text-align:center;font-size:35px;margin:0}
+.order-area>p{text-align:center;color:var(--muted);font-size:13px}
+.field{margin:20px 0}
+.field label{display:block;font-size:13px;margin-bottom:9px}
+.field select,.field input{
+ width:100%;padding:15px;border-radius:10px;
+ border:1px solid #ffffff24;background:#171510;color:white;
+ outline:none;
+}
+.field select:focus,.field input:focus{border-color:var(--gold)}
+.total{
+ display:flex;justify-content:space-between;align-items:center;
+ padding:18px;background:#ffffff0b;border-radius:12px;
+ margin:25px 0;
+}
+.total strong{font-size:25px;color:var(--gold)}
+.order-area .btn{width:100%}
 
-    .links {
-      display: flex;
-      gap: 28px;
-      color: #c3c0b8;
-      font-size: .88rem;
-    }
+/* FOOTER */
+footer{
+ padding:65px 20px;text-align:center;
+ border-top:1px solid var(--line);
+}
+.footer-logo{
+ font-family:'Playfair Display',serif;
+ font-size:45px;color:var(--gold);letter-spacing:5px;
+}
+footer p{font-size:12px;color:var(--muted)}
+.footer-copy{margin-top:30px;font-size:10px;color:#756b5d}
 
-    .links a:hover { color: var(--gold); }
+/* SCROLL ANIMATION */
+.reveal{
+ opacity:0;transform:translateY(45px);
+ transition:opacity .9s ease,transform .9s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes float{
+ 0%,100%{transform:translate(0,0)}
+ 50%{transform:translate(35px,-35px)}
+}
+@keyframes shine{
+ 0%{background-position:0%}
+ 100%{background-position:200%}
+}
+@keyframes pulse{
+ 50%{opacity:.4}
+}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes marquee{to{transform:translateX(50%)}}
 
-    .nav-cta, .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 11px 19px;
-      border: 1px solid rgba(217,185,120,.55);
-      border-radius: 7px;
-      background: var(--gold);
-      color: #17130b;
-      font-size: .86rem;
-      font-weight: 700;
-      transition: .25s ease;
-    }
-
-    .nav-cta:hover, .button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(217,185,120,.16);
-    }
-
-    .button.outline {
-      background: transparent;
-      color: var(--white);
-      border-color: var(--border);
-    }
-
-    .hero {
-      min-height: 690px;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      align-items: center;
-      gap: 50px;
-      padding: 85px 0 100px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--gold);
-      font-size: .85rem;
-      letter-spacing: .3px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    h1 {
-      max-width: 680px;
-      margin: 22px 0 18px;
-      font-size: clamp(2.7rem, 6vw, 5.3rem);
-      line-height: 1.3;
-      letter-spacing: -2px;
-    }
-
-    h1 span { color: var(--gold); }
-
-    .hero-copy {
-      max-width: 550px;
-      color: var(--muted);
-      line-height: 2.1;
-      font-size: 1rem;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .hero-art {
-      min-height: 455px;
-      position: relative;
-      display: grid;
-      place-items: center;
-      isolation: isolate;
-    }
-
-    .hero-art::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 330px;
-      height: 330px;
-      border-radius: 50%;
-      background: rgba(187,145,70,.13);
-      filter: blur(70px);
-    }
-
-    .poster {
-      width: min(330px, 78vw);
-      aspect-ratio: 4 / 5;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 27px;
-      border: 1px solid rgba(255,255,255,.19);
-      border-radius: 5px;
-      background:
-        linear-gradient(150deg, transparent 20%, rgba(217,185,120,.15)),
-        radial-gradient(circle at 68% 38%, #5b472a 0, #211b13 21%, transparent 48%),
-        linear-gradient(135deg, #28231b, #101011 65%);
-      box-shadow: 0 35px 100px rgba(0,0,0,.6);
-      transform: rotate(-4deg);
-      transition: transform .5s ease;
-    }
-
-    .poster:hover { transform: rotate(0) scale(1.025); }
-
-    .poster::before {
-      content: "HA";
-      position: absolute;
-      top: 22%;
-      right: -5%;
-      color: rgba(255,255,255,.055);
-      font-size: 10rem;
-      font-weight: 800;
-      letter-spacing: -12px;
-    }
-
-    .poster-label, .poster-bottom { position: relative; z-index: 1; }
-
-    .poster-label {
-      color: var(--gold);
-      font-size: .72rem;
-      letter-spacing: 3px;
-      direction: ltr;
-      text-align: right;
-    }
-
-    .poster-title {
-      margin: auto 0;
-      font-size: 2.2rem;
-      line-height: 1.5;
-      font-weight: 700;
-    }
-
-    .poster-title span { color: var(--gold); }
-
-    .poster-bottom {
-      display: flex;
-      justify-content: space-between;
-      color: #d0c7b5;
-      font-size: .7rem;
-    }
-
-    .floating-note {
-      position: absolute;
-      bottom: 16%;
-      right: 0;
-      padding: 13px 17px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: rgba(17,17,16,.88);
-      color: #dedbd4;
-      font-size: .78rem;
-      backdrop-filter: blur(12px);
-    }
-
-    section { padding: 75px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .section-head h2 {
-      margin: 8px 0 0;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-    }
-
-    .section-head p {
-      max-width: 420px;
-      margin: 0;
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.9;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .design-card {
-      position: relative;
-      min-height: 310px;
-      overflow: hidden;
-      display: flex;
-      align-items: end;
-      padding: 22px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--panel);
-      isolation: isolate;
-      transition: .35s ease;
-    }
-
-    .design-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(217,185,120,.55);
-    }
-
-    .design-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 65% 35%, rgba(217,185,120,.55), transparent 25%),
-        linear-gradient(145deg, #44351f, #191715 54%, #090909);
-      transition: transform .6s ease;
-    }
-
-    .design-card:nth-child(2)::before {
-      background:
-        radial-gradient(circle at 35% 40%, rgba(116,157,150,.55), transparent 27%),
-        linear-gradient(145deg, #243331, #151919 55%, #090909);
-    }
-
-    .design-card:nth-child(3)::before {
-      background:
-        radial-gradient(circle at 70% 35%, rgba(159,108,146,.55), transparent 27%),
-        linear-gradient(145deg, #39273a, #19151a 55%, #090909);
-    }
-
-    .design-card:nth-child(4)::before {
-      background:
-        radial-gradient(circle at 40% 35%, rgba(184,105,72,.55), transparent 25%),
-        linear-gradient(145deg, #43281e, #191412 55%, #090909);
-    }
-
-    .design-card:nth-child(5)::before {
-      background:
-        radial-gradient(circle at 65% 35%, rgba(96,126,177,.55), transparent 27%),
-        linear-gradient(145deg, #242d42, #15171d 55%, #090909);
-    }
-
-    .design-card:nth-child(6)::before {
-      background:
-        radial-gradient(circle at 35% 38%, rgba(178,155,91,.55), transparent 26%),
-        linear-gradient(145deg, #39321e, #191812 55%, #090909);
-    }
-
-    .design-card::after {
-      content: "استبدل هذه البطاقة بصورة تصميمك";
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      padding: 7px 10px;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 30px;
-      background: rgba(0,0,0,.24);
-      color: rgba(255,255,255,.72);
-      font-size: .65rem;
-    }
-
-    .design-card:hover::before { transform: scale(1.08); }
-
-    .card-info {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 10px;
-      padding-top: 75px;
-      background: linear-gradient(transparent, rgba(0,0,0,.8));
-    }
-
-    .card-info h3 { margin: 0; font-size: 1rem; }
-    .card-info span { color: var(--gold); font-size: .75rem; }
-
-    .about-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: center;
-      padding: 38px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: linear-gradient(120deg, #141311, #0e0e0e);
-    }
-
-    .about-box h2 { margin: 10px 0; font-size: 2rem; }
-    .about-box p { color: var(--muted); line-height: 2; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .stat {
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: rgba(255,255,255,.02);
-    }
-
-    .stat strong { display: block; color: var(--gold); font-size: 1.25rem; }
-    .stat span { color: var(--muted); font-size: .78rem; }
-
-    .contact {
-      text-align: center;
-      padding: 55px 25px;
-      border: 1px solid rgba(217,185,120,.25);
-      border-radius: 13px;
-      background: radial-gradient(ellipse at center, rgba(181,139,67,.1), transparent 65%), #10100f;
-    }
-
-    .contact h2 { margin: 10px 0; font-size: clamp(1.8rem, 4vw, 2.7rem); }
-    .contact p { color: var(--muted); margin: 0 0 23px; }
-
-    footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .78rem;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    @media (max-width: 760px) {
-      .links { display: none; }
-      .hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        padding: 75px 0 45px;
-        text-align: center;
-      }
-      .hero-copy { margin-inline: auto; }
-      .eyebrow { justify-content: center; }
-      .actions { justify-content: center; }
-      .hero-art { min-height: 390px; }
-      .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .design-card { min-height: 240px; padding: 14px; }
-      .about-box { grid-template-columns: 1fr; padding: 25px; }
-      .section-head { align-items: start; flex-direction: column; }
-    }
-
-    @media (max-width: 450px) {
-      .nav-cta { padding: 9px 12px; font-size: .75rem; }
-      .gallery { grid-template-columns: 1fr; }
-      .design-card { min-height: 280px; }
-      .footer-row { flex-direction: column; text-align: center; }
-    }
-  </style>
+@media(max-width:750px){
+ nav{padding:13px 5%;flex-wrap:wrap}
+ .navlinks{width:100%;justify-content:center;gap:17px}
+ .navlinks a{font-size:10px}
+ .products{grid-template-columns:1fr}
+ .story-grid{grid-template-columns:1fr;gap:25px}
+ .values{grid-template-columns:1fr}
+ section{padding:75px 6%}
+ .section-top{display:block}
+ .product-visual{height:230px}
+ .order-area{padding:25px 17px}
+ .hero h1{letter-spacing:-2px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{
+  animation:none!important;scroll-behavior:auto!important;
+  transition:none!important;
+ }
+ .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 
 <body>
-  <header class="topbar">
-    <nav class="wrap">
-      <a class="brand" href="#">ha_als23</a>
 
-      <div class="links">
-        <a href="#works">معرض الأعمال</a>
-        <a href="#about">عن المصمم</a>
-        <a href="#contact">تواصل</a>
-      </div>
+<nav>
+ <a href="#home" class="logo">GRAINA.</a>
+ <div class="navlinks">
+  <a href="#home">الرئيسية</a>
+  <a href="#collection">المنتجات</a>
+  <a href="#story">قصتنا</a>
+  <a href="#order" class="nav-cta">اطلب الآن ↗</a>
+ </div>
+</nav>
 
-      <a class="nav-cta" href="https://www.tiktok.com/@ha_als23" target="_blank" rel="noopener">
-        شاهد تيك توك ↗
-      </a>
-    </nav>
-  </header>
+<header class="hero" id="home">
+ <div class="orb one"></div>
+ <div class="orb two"></div>
+ <div class="hero-content">
+  <div class="eyebrow">A NEW WAY TO ENJOY GRANOLA</div>
+  <h1>GRAINA.</h1>
+  <div class="arabic">جرينا</div>
+  <p>
+   مذاق مختلف، تفاصيل مدروسة، وتجربة تبدأ من أول لقمة.
+   اكتشف عالم الجرانولا مع GRAINA.
+  </p>
+  <div class="actions">
+   <a class="btn btn-gold" href="#collection">اكتشف المجموعة ↗</a>
+   <a class="btn btn-outline" href="#story">اكتشف قصتنا</a>
+  </div>
+  <div class="scroll-label">SCROLL TO DISCOVER ↓</div>
+ </div>
+</header>
 
-  <main>
-    <section class="hero wrap">
-      <div>
-        <div class="eyebrow">استوديو إبداعي مستقل</div>
-        <h1>أفكارك تستحق<br><span>تصميماً يليق بها.</span></h1>
-        <p class="hero-copy">
-          تصاميم عصرية، تفاصيل مدروسة، وهوية تلفت النظر.
-          اكتشف أعمال ha_als23 وابدأ طلب تصميمك القادم.
-        </p>
-        <div class="actions">
-          <a class="button" href="#works">استكشف الأعمال ↓</a>
-          <a class="button outline" href="https://www.tiktok.com/@ha_als23" target="_blank" rel="noopener">
-            تابع الحساب على تيك توك
-          </a>
-        </div>
-      </div>
+<div class="marquee">
+ <div class="marquee-track">
+  <span>GRAINA ✦ GRANOLA ✦ NATURAL TASTE ✦ QUALITY ✦</span>
+  <span>GRAINA ✦ GRANOLA ✦ NATURAL TASTE ✦ QUALITY ✦</span>
+  <span>GRAINA ✦ GRANOLA ✦ NATURAL TASTE ✦ QUALITY ✦</span>
+ </div>
+</div>
 
-      <div class="hero-art">
-        <div class="poster">
-          <div class="poster-label">CREATIVE DESIGN STUDIO</div>
-          <div class="poster-title">فنّ<br><span>يصنع</span><br>الفرق.</div>
-          <div class="poster-bottom">
-            <span>DESIGN · VISUALS</span>
-            <span>ha_als23</span>
-          </div>
-        </div>
-        <div class="floating-note">✦ تصاميم بهوية مختلفة</div>
-      </div>
-    </section>
+<section id="collection">
+ <div class="container">
+  <div class="section-top reveal">
+   <div>
+    <div class="tag">THE COLLECTION — 01</div>
+    <h2>اختيارك يبدأ هنا.</h2>
+    <p>اكتشف أحجام GRAINA واختر ما يناسبك.</p>
+   </div>
+   <div class="tag">PREMIUM GRANOLA</div>
+  </div>
 
-    <section class="wrap" id="works">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow">مختارات من المعرض</div>
-          <h2>أعمال تُشاهد وتُتذكّر</h2>
-        </div>
-        <p>ضع صور تصاميمك الحقيقية مكان البطاقات المؤقتة، لتظهر أعمال الحساب مباشرة للزوار.</p>
-      </div>
+  <div class="products">
 
-      <div class="gallery">
-        <article class="design-card"><div class="card-info"><h3>تصميم إبداعي</h3><span>01 / Visual</span></div></article>
-        <article class="design-card"><div class="card-info"><h3>هوية بصرية</h3><span>02 / Identity</span></div></article>
-        <article class="design-card"><div class="card-info"><h3>تصميم محتوى</h3><span>03 / Content</span></div></article>
-        <article class="design-card"><div class="card-info"><h3>بوستر إعلاني</h3><span>04 / Poster</span></div></article>
-        <article class="design-card"><div class="card-info"><h3>تصميم سوشال ميديا</h3><span>05 / Social</span></div></article>
-        <article class="design-card"><div class="card-info"><h3>فكرة خاصة</h3><span>06 / Custom</span></div></article>
-      </div>
-    </section>
-
-    <section class="wrap" id="about">
-      <div class="about-box">
-        <div>
-          <div class="eyebrow">عن الحساب</div>
-          <h2>مرحباً، أنا <span style="color:var(--gold)">ha_als23</span></h2>
-          <p>
-            أعمل على تحويل الأفكار إلى تصاميم جذابة وواضحة.
-            اكتب هنا نبذة عن نوع التصاميم التي تقدمها، مثل تصميم الشعارات،
-            البوسترات، أو محتوى منصات التواصل.
-          </p>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>إبداع</strong><span>أفكار مصممة لك</span></div>
-          <div class="stat"><strong>تميّز</strong><span>أسلوب بصري خاص</span></div>
-          <div class="stat"><strong>عناية</strong><span>اهتمام بالتفاصيل</span></div>
-          <div class="stat"><strong>تواصل</strong><span>طلبك يبدأ برسالة</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap" id="contact">
-      <div class="contact">
-        <div class="eyebrow">خلّنا نبدأ</div>
-        <h2>عندك فكرة لتصميم جديد؟</h2>
-        <p>أرسل تفاصيل طلبك عبر واتساب أو تابع أحدث الأعمال على تيك توك.</p>
-        <div class="actions" style="justify-content:center">
-          <!-- استبدل الرقم بصيغة دولية، بدون + أو مسافات -->
-          <a class="button" href="https://wa.me/9665XXXXXXXX" target="_blank" rel="noopener">اطلب تصميمك عبر واتساب</a>
-          <a class="button outline" href="https://www.tiktok.com/@ha_als23" target="_blank" rel="noopener">تيك توك ↗</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© <span id="year"></span> ha_als23</span>
-      <span>صُمم بشغف للتفاصيل.</span>
+   <article class="product reveal">
+    <div class="product-visual">
+     <div class="jar">
+      <div class="jar-label">GRAINA<small>GRANOLA</small></div>
+     </div>
     </div>
-  </footer>
+    <div class="product-info">
+     <div class="tag">01 / CLASSIC</div>
+     <h3>جرانولا 200 جرام</h3>
+     <p>حجم عملي لتجربة طعم جرينا.</p>
+     <div class="product-bottom">
+      <div class="price">20 <small>ر.س</small></div>
+      <button class="buy" onclick="selectProduct(20)">اطلب ↗</button>
+     </div>
+    </div>
+   </article>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+   <article class="product reveal">
+    <div class="product-visual">
+     <div class="jar">
+      <div class="jar-label">GRAINA<small>GRANOLA</small></div>
+     </div>
+    </div>
+    <div class="product-info">
+     <div class="tag">02 / SIGNATURE</div>
+     <h3>جرانولا 300 جرام</h3>
+     <p>حجم أكبر لمحبي الجرانولا.</p>
+     <div class="product-bottom">
+      <div class="price">25 <small>ر.س</small></div>
+      <button class="buy" onclick="selectProduct(25)">اطلب ↗</button>
+     </div>
+    </div>
+   </article>
+
+  </div>
+ </div>
+</section>
+
+<section class="story" id="story">
+ <div class="container story-grid">
+  <div class="story-copy reveal">
+   <div class="tag">OUR PHILOSOPHY</div>
+   <div class="story-title">Simple.<br><span>Beautiful.</span><br>Delicious.</div>
+   <p>
+    في GRAINA نرى أن الجرانولا ليست مجرد مزيج من المكونات،
+    بل فن في اختيارها وتحضيرها وتقديمها.
+    نهتم بالتفاصيل لنقدم لك تجربة مميزة في كل مرة.
+   </p>
+  </div>
+  <div class="story-art reveal">
+   <strong>G.</strong>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-top reveal">
+   <div>
+    <div class="tag">THE GRAINA TOUCH</div>
+    <h2>تفاصيل تصنع الفرق.</h2>
+   </div>
+  </div>
+  <div class="values">
+   <div class="value reveal">
+    <div class="value-icon">🌾</div>
+    <h3>اختيار المكونات</h3>
+    <p>اهتمام بالمكونات وتناسقها.</p>
+   </div>
+   <div class="value reveal">
+    <div class="value-icon">✦</div>
+    <h3>فن التحضير</h3>
+    <p>عناية بطريقة التحضير والتقديم.</p>
+   </div>
+   <div class="value reveal">
+    <div class="value-icon">🤎</div>
+    <h3>تجربة مميزة</h3>
+    <p>طعم وتفاصيل تستحق التجربة.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="order">
+ <div class="container">
+  <div class="order-area reveal">
+   <div class="tag" style="text-align:center">YOUR NEXT ORDER</div>
+   <h2>اطلب GRAINA.</h2>
+   <p>اختر منتجك وسنجهز رسالة طلبك على واتساب.</p>
+
+   <div class="field">
+    <label>اختر حجم العبوة</label>
+    <select id="product" onchange="calculate()">
+     <option value="20">200 جرام — 20 ريال</option>
+     <option value="25">300 جرام — 25 ريال</option>
+    </select>
+   </div>
+
+   <div class="field">
+    <label>الكمية</label>
+    <input type="number" id="quantity" value="1" min="1" max="99"
+     oninput="calculate()">
+   </div>
+
+   <div class="total">
+    <span>الإجمالي</span>
+    <strong><span id="total">20</span> SAR</strong>
+   </div>
+
+   <button class="btn btn-gold" onclick="orderNow()">
+    COMPLETE ORDER VIA WHATSAPP ↗
+   </button>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="footer-logo">GRAINA.</div>
+ <p>جرينا — تجربة جرانولا مختلفة.</p>
+ <a href="https://wa.me/966532059317" class="btn btn-outline">
+  تواصل معنا عبر واتساب
+ </a>
+ <div class="footer-copy">© 2026 GRAINA. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script>
+const product=document.getElementById('product');
+const quantity=document.getElementById('quantity');
+const total=document.getElementById('total');
+
+function calculate(){
+ let q=Math.floor(Number(quantity.value)||1);
+ q=Math.max(1,Math.min(99,q));
+ quantity.value=q;
+ total.textContent=Number(product.value)*q;
+}
+
+function selectProduct(price){
+ product.value=String(price);
+ calculate();
+ document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+
+function orderNow(){
+ calculate();
+ const price=Number(product.value);
+ const q=Number(quantity.value);
+ const size=price===20?'200 جرام':'300 جرام';
+ const sum=price*q;
+ const message=
+ `السلام عليكم، أريد الطلب من GRAINA.
+ المنتج: جرانولا ${size}
+ الكمية: ${q}
+ الإجمالي: ${sum} ريال.`;
+ window.open(
+  'https://wa.me/966532059317?text='+encodeURIComponent(message),
+  '_blank'
+ );
+}
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+calculate();
+</script>
+
 </body>
 </html>
